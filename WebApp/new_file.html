@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/new_file.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/swiper.3.1.7.jquery.min.js" ></script>
+		<script type="text/javascript" src="js/iscroll.js" ></script>
+		<script type="text/javascript" src="js/zepto.min.js" ></script>
+	</head>
+	<body>
+		<div class="header">
+			<div>
+				<a href="#">热点</a>
+				<a href="#">关注</a>
+			</div>
+		</div>
+		<ul class="list">
+				<li><a href="#">足球现场</a></li>
+				<li><a href="#">足球生活</a></li>
+				<li><a href="#">足球美女</a></li>
+		</ul>
+		<div class="swiper-container cont">
+			<div class="swiper-wrapper">
+				<div cass="swiper-slide">
+					<div id="scroll">
+						<img src="img/img05.png" /> 
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div id="scroll">
+						<img src="img/img04.png" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div id="scroll">
+						<img src="img/img03.png" />
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		
+		
+		
+		<!--<div class="footer">
+			<div>
+				<a href="#" class="iconfont">&#xe601;<br/>首页</a>
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe616;<br/>搜索</a>
+			</div>
+			<div style="position:relative;">
+				<div class="cream">
+					<a href="#" class="iconfont">&#xe604;</a>
+				</div>
+				
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe631;<br/>我的</a>
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe746;<br/>退出</a>
+			</div>
+		</div>-->
+	</body>
+	<script>
+			
+			
+			//动画功能     
+		var mySwiper = new Swiper('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			// 如果需要前进后退按钮
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			// 如果需要滚动条
+			scrollbar: '.swiper-scrollbar',
+			onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+				swiperAnimateCache(swiper); //隐藏动画元素 
+				swiperAnimate(swiper); //初始化完成开始动画
+			},
+			onSlideChangeEnd: function(swiper) {
+				swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/find.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+	</head>
+
+	<body>
+		<header>发现</header>
+		<div class="search">
+			<input type="text" placeholder="请输入昵称" class="txt" />
+			<button id="btn">搜 索</button>
+		</div>
+			<div id="wrapper">
+				<div id="scroll">
+					<div class="topon">
+						<div class="left">
+							<p><img src="img/img01.png" /></p>
+						</div>
+						<div class="center">
+							<p>我叫小萌</p>
+							<p>我是小萌我怕谁！哈哈哈</p>
+						</div>
+						<div class="right">
+							<span>关注</span>
+							<span>已关注</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="footer">
+			<div>
+				<a href="index.html" class="iconfont">&#xe601;<br/>首页</a>
+			</div>
+			<div>
+				<a href="find.html" class="iconfont">&#xe616;<br/>搜索</a>
+			</div>
+			<div style="position:relative;">
+				<div class="cream">
+					<a href="#" class="iconfont">&#xe604;</a>
+				</div>
+
+			</div>
+			<div>
+				<a href="my_user.html" class="iconfont">&#xe631;<br/>我的</a>
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe746;<br/>退出</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function() {
+			var wHeight = $(window).height();
+			hHeight = $(".header").height(),
+				fHeight = $(".footer").height(),
+				scroll = new iScroll("wrapper", {
+					hScrollbar: false,
+					vScrollbar: false
+				})
+			$("#wrapper").height(wHeight - hHeight - fHeight - 20);
+			scroll.refresh();
+		})
+	//-----------点击搜索-----------------
+	$("#btn").click(function(){
+		var aTxt=$(".txt").val();
+		var uid=document.getElementById("uid");
+		$.ajax({
+			type:"get",
+			url:"http://localhost:8080/Proxy/FootBall/user/json/queryall.do",
+			data:{
+				"keyword":aTxt
+			},
+			success:function(d){
+			
+				$("#scroll").children("div").remove();
+				var nkn=null;
+				var oImg=null;
+				var sign=null;
+				var htmlstr=null; 
+				var data=JSON.parse(d).data;
+				if(data.userlist.length == 0){
+					$("#scroll").append('<div class="error">未找到相关用户</div>');
+					return;
+				}
+				for(var i=0;i<data.userlist.length;i++){
+					//console.info(data.userlist[i].avatarpath)
+					nkn = data.userlist[i].nickname;
+				//	console.info(data.userlist[i].avatarpath)
+					oImg='http://101.200.173.217:8080/FootBall'+data.userlist[i].avatarpath;
+					sign=data.userlist[i].signnature;
+					htmlstr='<div class="topon"><div class="left"><p style="background-Image:url('+oImg+');"></p></div><div class="center"><p>'+nkn+'</p><p>'+sign+'</p></div><div class="right"><span>关注</span><span>已关注</span></div></div>';
+					$("#scroll").append(htmlstr);
+					$(document).ready(function(){
+						scroll.refresh();
+					})
+					
+				}
+				
+				console.log(sign);
+			}
+		})
+	})
+	
+	</script>
+
+
+</html>

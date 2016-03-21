@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style1.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div>
+				<a href="index.html">热点</a>
+				<a href="index1.html">关注</a>
+			</div>
+		</div>
+		<div id="scroll">
+			<div class="wrap">
+				<div class="cont">
+					<div class="topon">
+						<div class="left">
+							<p><img src="img/img01.png" /> </p>
+						</div>
+						<div class="center">
+							<p>我叫小萌</p>
+							<p>我是小萌我怕谁！哈哈哈</p>
+						</div>
+						<div class="right">
+							<p>382344</p>
+							<span></span>
+						</div>
+					</div>
+					<div class="down">
+						<img src="img/img03.png" />
+						<p>小丸子啊小丸子</p>
+					</div>
+				</div>
+				<div class="cont">
+					<div class="topon">
+						<div class="left">
+							<p><img src="img/img04.png" /> </p>
+						</div>
+						<div class="center">
+							<p>LiLy</p>
+							<p>Hellow~My Name is LiLy!</p>
+						</div>
+						<div class="right">
+							<p>382344</p>
+							<span></span>
+						</div>
+					</div>
+					<div class="down">
+						<img src="img/img03.png" />
+						<p>小丸子啊小丸子</p>
+					</div>
+				</div>
+				<div class="cont">
+					<div class="topon">
+						<div class="left">
+							<p><img src="img/img04.png" /> </p>
+						</div>
+						<div class="center">
+							<p>LiLy</p>
+							<p>Hellow~My Name is LiLy!</p>
+						</div>
+						<div class="right">
+							<p>382344</p>
+							<span></span>
+						</div>
+					</div>
+					<div class="down">
+						<img src="img/img03.png" />
+						<p>小丸子啊小丸子</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div>
+				<a href="index.html" class="iconfont">&#xe601;<br/>首页</a>
+			</div>
+			<div>
+				<a href="find.html" class="iconfont">&#xe616;<br/>搜索</a>
+			</div>
+			<div style="position:relative;">
+				<div class="cream">
+					<a href="#" class="iconfont">&#xe604;</a>
+				</div>
+
+			</div>
+			<div>
+				<a href="my_user.html" class="iconfont">&#xe631;<br/>我的</a>
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe746;<br/>退出</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function() {
+			var wHeight = $(window).height();
+			hHeight = $(".header").height(),
+				fHeight = $(".footer").height(),
+				scroll = new iScroll("scroll", {
+					hScrollbar: false,
+					vScrollbar: false
+				})
+			$("#scroll").height(wHeight - hHeight - fHeight - 20);
+			scroll.refresh();
+		})
+	</script>
+
+</html>

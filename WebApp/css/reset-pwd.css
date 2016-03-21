@@ -1,0 +1,47 @@
+html{
+	height:100%;
+}
+body{
+	width:100%;
+	height:100%;
+	max-width: 640px;
+	margin:0 auto;
+}
+header{
+	width:100%;
+	height:37px;
+	background: #61B7DA;
+	text-align: center;
+	font-size:17px;
+	color:#fff;
+	line-height:37px;
+}
+.form{
+	margin:0 15px;
+}
+.form input:nth-child(1){
+	margin-top:21px;
+}
+.form input:nth-child(2){
+	margin-top:34px;
+}
+.form input{
+	width:100%;
+	height:33px;
+	border-bottom: 1px solid #7F7F7F;
+	font-family: "微软雅黑";
+	font-size:13px;
+}
+.form button{
+	width:100%;
+	height:38px;
+	margin-top:35px;
+	background:#0F91C5;
+	text-align: center;
+	line-height:38px;
+	border:0;
+	border-radius: 3px;
+	color:#fff;
+	font-size:17px;
+	font-family: "微软雅黑";
+}

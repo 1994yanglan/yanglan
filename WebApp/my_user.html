@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/my_user.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+	</head>
+
+	<body>
+		<header>个人中心</header>
+		<div class="search">
+			<input type="text" placeholder="请输入昵称" class="txt" />
+			<button>搜 索</button>
+		</div>
+		<div class="cont">
+			<div class="cont_top">
+				<div class="topon">
+					<div class="left">
+						<p><img src="img/img01.png" /> </p>
+					</div>
+					<div class="center">
+						<p>我叫小萌</p>
+						<p>我是小萌我怕谁！哈哈哈</p>
+					</div>
+				</div>
+				<ul class="list">
+					<li><a href="#">照片(1)</a></li>
+					<li><a href="#">关注(3)</a></li>
+					<li><a href="#">粉丝(8)</a></li>
+				</ul>
+				<div id="scroll">
+					<ul class="list_img">
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+						<li><img src="img/img05.png" /> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div>
+				<a href="index.html" class="iconfont">&#xe601;<br/>首页</a>
+			</div>
+			<div>
+				<a href="find.html" class="iconfont">&#xe616;<br/>搜索</a>
+			</div>
+			<div style="position:relative;">
+				<div class="cream">
+					<a href="#" class="iconfont">&#xe604;</a>
+				</div>
+
+			</div>
+			<div>
+				<a href="my_user.html" class="iconfont">&#xe631;<br/>我的</a>
+			</div>
+			<div>
+				<a href="#" class="iconfont">&#xe746;<br/>退出</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function() {
+			var wHeight = $(window).height();
+			hHeight = $(".header").height(),
+				fHeight = $(".footer").height(),
+				scroll = new iScroll("scroll", {
+					hScrollbar: false,
+					vScrollbar: false
+				})
+			$("#scroll").height(wHeight - hHeight - fHeight - 20);
+			scroll.refresh();
+		})
+	</script>
+
+
+</html>

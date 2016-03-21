@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/reg.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/reg.js"></script>
+	</head>
+
+	<body>
+		<header>足球圈子——注册</header>
+		<div class="form">
+			<input type="text" placeholder="手机号" id="num" />
+			<input type="password" placeholder="密码" id="mima" />
+			<input type="text" placeholder="昵称" id="name" />
+			<button>提 交</button>
+		</div>
+
+	</body>
+	<script>
+		$("button").on("click", function(e) {
+			e.preventDefault();
+			var num = $("#num").val(),
+				mima = $("#mima").val(),
+				name=$("#name").val(),
+				userInfo = window.localStorage;
+				btnTest(num,mima,name);
+				$.ajax({
+					url: "http://localhost:8080/Proxy/FootBall/user/json/reg.do",
+					data: {
+						"loginname": num,
+						"password": mima,
+						"nickname": name
+					},
+					success:function(d){
+						console.log(d);
+						var data = JSON.parse(d);
+					}
+				})
+		})
+	</script>
+
+</html>
